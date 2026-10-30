@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Maade! - Rolagem de Dados</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Rolagem de Dados</h1>
+      <p class="subtitle">
+        Use <code>1d20+5</code>, <code>2d20+2d6</code> ou <code>2#d20</code>.
+      </p>
+    </header>
+
+    <main>
+      <div class="quick-dice">
+        <button class="btn-dice" type="button" onclick="setDice('1d4',this)">d4</button>
+        <button class="btn-dice" type="button" onclick="setDice('1d6',this)">d6</button>
+        <button class="btn-dice" type="button" onclick="setDice('1d8',this)">d8</button>
+        <button class="btn-dice" type="button" onclick="setDice('1d10',this)">d10</button>
+        <button class="btn-dice" type="button" onclick="setDice('1d12',this)">d12</button>
+        <button class="btn-dice active" type="button" onclick="setDice('1d20',this)">d20</button>
+        <button class="btn-dice" type="button" onclick="setDice('1d100',this)">d100</button>
+      </div>
+
+      <form id="dice-form">
+        <div class="input-group">
+          <input id="dice-input" value="1d20" required autocomplete="off">
+          <button id="roll-btn" type="submit">Rolar</button>
+        </div>
+      </form>
+
+      <div class="result-box">
+        <span class="result-label">Resultado</span>
+        <div class="result-value" id="total-result">-</div>
+        <div class="result-breakdown" id="result-breakdown">Aguardando rolagem...</div>
+      </div>
+
+      <section class="history-section">
+        <h2>Histórico</h2>
+        <ul id="history-list">
+          <li class="empty-history">Nenhuma rolagem feita ainda.</li>
+        </ul>
+      </section>
+
+      <section class="room-section">
+        <h2>Mesa P2P</h2>
+        <p class="room-description">
+          Conexão direta entre dois navegadores. Troquem os códigos para compartilhar as rolagens.
+        </p>
+
+        <label>
+          Seu nome
+          <input id="player-name" maxlength="24" value="Jogador">
+        </label>
+
+        <div class="p2p-actions">
+          <button type="button" id="offer-btn">Criar convite</button>
+          <button type="button" id="answer-btn">Responder convite</button>
+        </div>
+
+        <label>
+          Código recebido
+          <textarea id="signal-input" rows="4" placeholder="Cole aqui o código recebido"></textarea>
+        </label>
+
+        <button type="button" id="apply-signal-btn" class="wide">
+          Aplicar código recebido
+        </button>
+
+        <label>
+          Código para enviar
+          <textarea id="signal-output" rows="4" readonly placeholder="O código gerado aparece aqui"></textarea>
+        </label>
+
+        <button type="button" id="copy-signal-btn" class="wide secondary">
+          Copiar código gerado
+        </button>
+
+        <p id="p2p-status">Ainda sem conexão.</p>
+
+        <div class="feed-panel">
+          <div class="feed-heading">
+            <b>Feed de rolagens</b>
+            <span id="connection-status">Desconectado</span>
+          </div>
+
+          <ul id="roll-feed">
+            <li class="feed-empty">
+              As rolagens dos jogadores aparecerão aqui.
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p class="footer-credit">Feito por Yide</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

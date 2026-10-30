@@ -1,0 +1,303 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #0d0f12;
+  color: #e2e8f0;
+  font-family: Inter, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.container {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 520px;
+  padding: 30px 22px;
+  box-shadow: 0 10px 30px #0008;
+}
+
+h1 {
+  font-family: Cinzel, serif;
+  text-align: center;
+  color: #f1f5f9;
+  margin-bottom: 8px;
+}
+
+.subtitle,
+.room-description {
+  color: #94a3b8;
+  text-align: center;
+  font-size: .86rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+code {
+  color: #f59e0b;
+  background: #21262d;
+  padding: 2px 5px;
+  border-radius: 4px;
+}
+
+.quick-dice,
+.p2p-actions,
+.input-group {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.quick-dice {
+  justify-content: center;
+}
+
+.btn-dice {
+  background: #21262d;
+  color: #cbd5e1;
+  border: 1px solid #30363d;
+  padding: 8px 13px;
+  border-radius: 8px;
+}
+
+.btn-dice.active {
+  background: #8b5cf6;
+  color: white;
+}
+
+button {
+  background: linear-gradient(135deg, #7c3aed, #a855f7);
+  color: white;
+  border: 0;
+  border-radius: 9px;
+  padding: 11px 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: .45;
+  cursor: not-allowed;
+}
+
+input,
+textarea {
+  width: 100%;
+  min-width: 0;
+  background: #0d0f12;
+  border: 1px solid #30363d;
+  border-radius: 9px;
+  padding: 11px;
+  color: white;
+  font: inherit;
+}
+
+input:focus,
+textarea:focus {
+  outline: 1px solid #8b5cf6;
+}
+
+.input-group input {
+  flex: 1;
+}
+
+.result-box,
+.feed-panel {
+  background: #0d0f12;
+  border: 1px solid #30363d;
+  border-radius: 12px;
+  padding: 18px;
+  text-align: center;
+  margin: 18px 0;
+}
+
+.result-label {
+  color: #64748b;
+  font-size: .8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.result-value {
+  font-size: 3.3rem;
+  color: #f59e0b;
+  font-weight: 700;
+}
+
+.result-breakdown {
+  color: #94a3b8;
+  font-size: .85rem;
+  overflow-wrap: anywhere;
+}
+
+.history-section h2,
+.room-section h2 {
+  font-size: 1.1rem;
+  border-bottom: 1px solid #30363d;
+  padding-bottom: 7px;
+  margin: 20px 0 12px;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+#history-list {
+  max-height: 180px;
+  overflow: auto;
+}
+
+.history-item {
+  background: #21262d;
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.history-command,
+.feed-author {
+  color: #a78bfa;
+  font-weight: 700;
+}
+
+.history-details {
+  color: #94a3b8;
+  font-size: .8rem;
+}
+
+.history-total {
+  color: #f59e0b;
+  font-weight: 700;
+}
+
+.empty-history,
+.feed-empty {
+  color: #64748b;
+  text-align: center;
+  padding: 12px;
+  font-size: .85rem;
+}
+
+.room-section label {
+  display: block;
+  color: #94a3b8;
+  font-size: .82rem;
+  margin: 12px 0;
+}
+
+.room-section label input,
+.room-section label textarea {
+  display: block;
+  margin-top: 6px;
+}
+
+.p2p-actions button {
+  flex: 1;
+}
+
+.wide {
+  width: 100%;
+  margin-top: 5px;
+}
+
+.secondary {
+  background: #21262d;
+  border: 1px solid #30363d;
+}
+
+.room-section #p2p-status {
+  font-size: .82rem;
+  color: #f59e0b;
+  margin: 12px 0;
+}
+
+.feed-panel {
+  text-align: left;
+}
+
+.feed-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.feed-heading span {
+  font-size: .75rem;
+  color: #f59e0b;
+}
+
+.feed-heading span.connected {
+  color: #4ade80;
+}
+
+#roll-feed {
+  max-height: 260px;
+  overflow-y: auto;
+}
+
+.feed-item {
+  background: #21262d;
+  border-left: 3px solid #f59e0b;
+  border-radius: 8px;
+  padding: 10px;
+  overflow-wrap: anywhere;
+}
+
+.feed-author {
+  display: block;
+  font-size: .78rem;
+  margin-bottom: 5px;
+}
+
+.feed-command {
+  color: #f8d58b;
+  font-size: .9rem;
+  font-weight: 600;
+}
+
+.feed-details {
+  color: #94a3b8;
+  font-size: .8rem;
+  margin-top: 4px;
+}
+
+.feed-total {
+  color: #f59e0b;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-top: 5px;
+}
+
+footer {
+  text-align: center;
+  margin-top: 22px;
+  color: #475569;
+  font-size: .75rem;
+  text-transform: uppercase;
+}
+
+@media (max-width: 430px) {
+  body {
+    padding: 10px;
+  }
+
+  .container {
+    padding: 22px 14px;
+  }
+}
